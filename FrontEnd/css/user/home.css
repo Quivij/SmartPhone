@@ -28,6 +28,9 @@ header {
 .menu > li {
   padding: 0 50px;
 }
+.sub-menu {
+  position: absolute;
+}
 .menu > li a {
   font-size: 12px;
   font-weight: bold;
