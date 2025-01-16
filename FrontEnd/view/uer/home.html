@@ -16,35 +16,98 @@
       <div class="logo"></div>
       <div class="menu">
         <li><a href="">TRANG CHỦ </a></li>
-        <li>
-          <a href="">ĐIỆN THOẠI </a>
-          <ul class="sub-menu">
-            <li><a href="">Hàng mới về</a></li>
-            <li>
-              <a href="">iPhone</a>
-              <ul>
-                <li>iPhone 16</li>
-                <li>iPhone 15</li>
-                <li>iPhone 14</li>
-                <li>iPhone 13</li>
-                <li>iPhone 12</li>
-                <li>iPhone 11</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="">LIÊN HỆ </a></li>
-        <li><a href="">GIỚI THIỆU </a></li>
-        <li><a href="">GIỎ HÀNG </a></li>
+        <li><a href=""> iPhone </a></li>
+        <li><a href="">iPad </a></li>
+        <li><a href="">Điện Thoại </a></li>
+        <li><a href="">SamSung </a></li>
       </div>
       <div class="others">
         <li>
-          <input placeholder="Tìm kiếm" type="text" /><i
+          <input placeholder="Bạn cần tìm gì" type="text" /><i
             class="fas fa-search"
           ></i>
         </li>
         <li><a class="fa fa-user" href=""></a></li>
+        <li><a class="fa-solid fa-cart-shopping" href=""></a></li>
       </div>
     </header>
+    <section id="Slider">
+      <div class="aspect-ratio-169">
+        <img src="../../img/sile/tra-gop-0d-241216045145.webp" />
+        <img src="../../img/sile/slide-iphone.jpg" />
+        <img src="../../img/sile/slide-ipad.png" />
+        <img src="../../img/sile/slide-samsung.png" />
+        <img src="../../img/sile/slide-dep.png" />
+      </div>
+      <div class="dot-container">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </section>
+    <!-- ------------app-container----------- -->
+    <section class="app-container">
+      <p>Tải ứng dụng</p>
+      <div class="app-goole">
+        <img src="../../img/sile/appstore.png" />
+        <img src="../../img/sile/googleplay.png" />
+      </div>
+      <p>nhận thông tin của điện thoại giá rẽ</p>
+      <input type="text" placeholder="Nhập email của bạn" />
+    </section>
+    <!-- --------------footer------------- -->
+    <div class="footer-top">
+      <li>
+        <a href=""><img src="../../img/sile/img-congthuong.png" alt="" /></a>
+      </li>
+      <li><a href=""></a>Liên Hệ</li>
+      <li><a href="">Tuyển Dụng </a></li>
+      <li><a href=""></a>Giới Thiệu</li>
+      <li>
+        <a href="" class="fab fa-facebook-f"></a>
+        <a href="" class="fab fa-twitter"></a>
+        <a href="" class="fab fa-youtube"></a>
+      </li>
+    </div>
+    <div class="footer-center">
+      <p>
+        Công ty TNHH Minh Tuấn Mobile - GPĐKKD: 0316579658 do sở KH & ĐT TP. HCM
+        cấp ngày 09/11/2020. <br />Địa chỉ: 135/1/8 Nguyễn Hữu Cảnh, Phường 22,
+        Quận Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam. Điện thoại:
+        <b>0832028447</b>
+      </p>
+    </div>
+    <div class="footer-bottom">©IVYmoda All rights reserved</div>
   </body>
+
+  <script>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
+    const imgContainer = document.querySelector(".aspect-ratio-169");
+    const dotItem = document.querySelectorAll(".dot");
+    let index = 0;
+    let imgNumber = imgPosition.length;
+    // console.log(imgPosition);
+    imgPosition.forEach(function (image, index) {
+      image.style.left = index * 100 + "%";
+      dotItem[index].addEventListener("click", function () {
+        slider(index);
+      });
+    });
+    function imgSlide() {
+      index++;
+      if (index >= imgNumber) {
+        index = 0;
+      }
+      slider(index);
+    }
+    function slider(index) {
+      imgContainer.style.left = "-" + index * 100 + "%";
+      const dotActive = document.querySelector(".active");
+      dotActive.classList.remove("active");
+      dotItem[index].classList.add("active");
+    }
+    setInterval(imgSlide, 5000);
+  </script>
 </html>
